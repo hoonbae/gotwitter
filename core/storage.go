@@ -2,9 +2,10 @@ package core
 
 import (
 	"fmt"
+	"log"
 	"os"
 
-	"twitter/models"
+	"gotwitter/models"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"

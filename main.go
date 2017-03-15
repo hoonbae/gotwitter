@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"twitter/controllers"
+	"gotwitter/controllers"
 
-	. "twitter/core"
+	. "gotwitter/core"
 )
 
 func LoadCore() {
