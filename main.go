@@ -13,6 +13,7 @@ func LoadCore() {
 
 func LoadControllers(e *gin.Engine) {
 	controllers.HomeController(e)
+	controllers.ApiController(e)
 }
 
 func main() {

@@ -6,6 +6,7 @@ import (
 
 func HomeController(e *gin.Engine) {
 	router := e.Group("/home")
+
 	router.GET("", HomeIndex)
 }
 

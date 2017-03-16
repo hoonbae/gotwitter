@@ -11,5 +11,8 @@ type User struct {
 	DeletedAt *time.Time `json:"deleted_at"`
 
 	Name     string `json:"name"`
+	Username string `json:"username"`
 	Password string `json:"-"`
+
+	IsAdmin bool `json:"is_admin"`
 }
