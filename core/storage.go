@@ -33,7 +33,7 @@ func initDatabase() {
 		log.Fatal(fmt.Sprintf("Got error when connect database, the error is '%v'", err))
 	}
 
-	Storage.DB.LogMode(Config.Local())
+	Storage.DB.LogMode(true)
 
 	Storage.DB.AutoMigrate(
 		&models.User{},
