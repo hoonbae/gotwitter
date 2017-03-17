@@ -5,6 +5,8 @@ import (
 	"gotwitter/controllers"
 
 	. "gotwitter/core"
+
+	"github.com/robvdl/pongo2gin"
 )
 
 func LoadCore() {
@@ -23,5 +25,7 @@ func main() {
 
 	e.LoadHTMLGlob("templates/**/*")
 	LoadControllers(e)
+
+	e.HTMLRender = pongo2gin.Default()
 	e.Run(":8080")
 }

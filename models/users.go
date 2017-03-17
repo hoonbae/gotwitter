@@ -15,4 +15,5 @@ type User struct {
 	Password string `json:"-"`
 
 	IsAdmin bool `json:"is_admin"`
+	Tweets  []Tweet
 }

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"github.com/flosch/pongo2"
 	"github.com/gin-gonic/gin"
 )
 
@@ -11,7 +12,8 @@ func HomeController(e *gin.Engine) {
 }
 
 func HomeIndex(c *gin.Context) {
-	c.HTML(200, "home/index.html", gin.H{
-		"title": "Twitter",
+	c.HTML(200, "home/index.html", pongo2.Context{
+		"title":    "GoTwitter",
+		"username": "username_placeholder",
 	})
 }
