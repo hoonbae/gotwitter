@@ -16,14 +16,7 @@ func HomeController(e *gin.Engine) {
 }
 
 func HomeIndex(c *gin.Context) {
-	var tweet []Tweet
-	Storage.DB.Find(&tweet)
-
-	c.HTML(200, "home/index.html", pongo2.Context{
-		"title":    "GoTwitter",
-		"username": "username_placeholder",
-		"tweets":   tweet,
-	})
+	c.HTML(200, "home/index.html", pongo2.Context{})
 }
 
 func SubmitTweet(c *gin.Context) {

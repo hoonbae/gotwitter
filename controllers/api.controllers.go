@@ -13,6 +13,7 @@ func ApiController(e *gin.Engine) {
 	router.GET("", ApiTest)
 	router.GET("/users", ApiGetUsers)
 	router.GET("/tweets", ApiGetTweets)
+	router.POST("/tweets", ApiPostTweets)
 	router.GET("/users/:id", ApiGetUserById)
 }
 
@@ -41,6 +42,18 @@ func ApiGetTweets(c *gin.Context) {
 	var tweet []Tweet
 
 	Storage.DB.Preload("User").Find(&tweet)
+
+	c.JSON(200, tweet)
+}
+
+func ApiPostTweets(c *gin.Context) {
+	body := c.PostForm("body")
+
+	tweet := Tweet{
+		TweetMessage: body,
+	}
+
+	Storage.DB.Create(&tweet)
 
 	c.JSON(200, tweet)
 }
