@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>GoTwitter</title>
+    <link href="/static/index.css" rel="stylesheet">
   </head>
 
   <body>
@@ -11,11 +12,13 @@
 
       <div class="container">
       <table>
-        <tr>
-          <td><label>{{ username }}</label></td>
-          <td><input type="text" id="tweet" name="tweet" placeholder="What is happening?" required="true" /></td>
-          <td><input type="submit" name="submit" value="Submit" /></td>
-        </tr>
+        <form action="/home" method="POST">
+          <tr>
+            <td><label>{{ username }}</label></td>
+            <td><input type="text" name="tweet" placeholder="What is happening?" required="true" /></td>
+            <td><input type="submit" name="submit" value="Submit" /></td>
+          </tr>
+        </form>
         <tr>
 
         </tr>
@@ -26,10 +29,12 @@
 
       <div class="container">
         <table>
-          <tr>
-            <td>{{ username }}</td>
-            <td>There should be a tweet message here.</td>
-          </tr>
+          {% for tweet in tweets %}
+            <tr>
+              <td>{{ username }}</td>
+              <td>{{ tweet.TweetMessage }}</td>
+            </tr>
+          {% endfor %}
         </table>
       </div>
   </body>

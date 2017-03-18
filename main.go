@@ -26,6 +26,8 @@ func main() {
 	e.LoadHTMLGlob("templates/**/*")
 	LoadControllers(e)
 
+	e.Static("/static", "static")
+
 	e.HTMLRender = pongo2gin.Default()
 	e.Run(":8080")
 }
